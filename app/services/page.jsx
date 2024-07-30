@@ -25,7 +25,7 @@ const services = [
   },
   {
     num: '04',
-    title: 'React Natice Development',
+    title: 'React Native Development',
     desc: 'Developing cross-platform applications with React Native, focusing on performance, and seamless functionality.',
     href: "/work",
   },
