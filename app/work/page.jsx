@@ -97,7 +97,7 @@ const Work = () => {
               </p>
 
               {/* stack */}
-              <ul className="flex gap-4">
+              <ul className="grid grid-cols-2 md:flex gap-4">
                 {project.stack.map((item, idx) => {
                   return (
                     <li
