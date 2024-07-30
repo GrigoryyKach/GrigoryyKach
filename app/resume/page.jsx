@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 // about data
 const about = {
   title: "About me",
-  desc: "Front-end developer with 1 year of experience in the IT field. I implement modern front-end technologies such as React to create interactive user interfaces. I can create responsive and cross-browser user interfaces. Ability to solve complex technical problems and make informed decisions under time constraints. I have the skills to communicate effectively with the team, which allows me to achieve my goals as efficiently as possible.",
+  desc: "My name Hryhorii, I'm 20 years old. I have been passionate about technology, computers and video games since my childhood. I'm also passionate about music - I play the drums in my free time.",
   info: [
     {
       fieldName: "Name",
@@ -22,7 +22,7 @@ const about = {
       fieldValue: "+380 95 863 21 99"
     },
     {
-      fieldName: "Experience",
+      fieldName: "IT Experience",
       fieldValue: "2 years"
     },
     {
@@ -48,7 +48,7 @@ const about = {
 const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My experience",
-  desc: "Front-end developer with 1 year of experience in the IT field. I implement modern front-end technologies such as React to create interactive user interfaces. I can create responsive and cross-browser user interfaces. Ability to solve complex technical problems and make informed decisions under time constraints. I have the skills to communicate effectively with the team, which allows me to achieve my goals as efficiently as possible.",
+  desc: "Front-end developer with 1 year of experience in the IT field. I implement modern front-end technologies such as React to create interactive user interfaces. I can create responsive and cross-browser user interfaces.",
   items: [
     {
       projects: "Gadgets Online Store",
@@ -76,7 +76,7 @@ const experience = {
 const education = {
   icon: "/assets/resume/cap.svg",
   title: "My education",
-  desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui sunt voluptas ab, tempore inventore eveniet.",
+  desc: "This is where I gained my knowledge, experience and met some wonderful people.",
   items: [
     {
       instituion: "Mate Acadamy",
@@ -104,7 +104,7 @@ const education = {
 // skills data
 const skills = {
   title: "My skills",
-  desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui sunt voluptas ab, tempore inventore eveniet.",
+  desc: "I use these skills to create responsive and effective web applications.",
   skillList: [
     {
       icon: <FaHtml5 />,

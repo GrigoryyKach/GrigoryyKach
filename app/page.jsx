@@ -20,6 +20,7 @@ const Home = () => {
             <p className="max-w-[500px] mb-9 text-white/80">
               I implement modern front-end technologies such as React with TypeScript to create interactive user interfaces
             </p>
+
             {/* btn & socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
               <Button
