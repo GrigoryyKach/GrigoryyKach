@@ -1,7 +1,18 @@
 "use client";
 
-import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma } from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+import { FaHtml5, FaCss3, FaJs, FaReact, FaVuejs, FaFigma } from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiNextdotjs,
+  SiNuxtdotjs,
+  SiSass,
+  SiTypescript,
+  SiBem,
+  SiNpm,
+  SiGit,
+  SiVisualstudiocode,
+  SiWebpack
+} from "react-icons/si";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
@@ -123,12 +134,48 @@ const skills = {
       name: "react.js",
     },
     {
+      icon: <SiTypescript />,
+      name: "typescript",
+    },
+    {
+      icon: <FaVuejs />,
+      name: "vue.js",
+    },
+    {
       icon: <SiNextdotjs />,
       name: "next.js",
     },
     {
+      icon: <SiNuxtdotjs />,
+      name: "nuxt.js",
+    },
+    {
       icon: <SiTailwindcss />,
       name: "tailwind.css",
+    },
+    {
+      icon: <SiSass />,
+      name: "sass",
+    },
+    {
+      icon: <SiBem />,
+      name: "BEM",
+    },
+    {
+      icon: <SiNpm />,
+      name: "NPM",
+    },
+    {
+      icon: <SiWebpack />,
+      name: "Webpack",
+    },
+    {
+      icon: <SiGit />,
+      name: "GIT",
+    },
+    {
+      icon: <SiVisualstudiocode />,
+      name: "VS code",
     },
     {
       icon: <FaFigma />,
@@ -243,6 +290,7 @@ const Resume = () => {
                     {skills.desc}
                   </p>
                 </div>
+                <ScrollArea className="h-[430px]">
                 <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
                   {skills.skillList.map((skill, idx) => {
                     return (
@@ -265,6 +313,7 @@ const Resume = () => {
                     )
                   })}
                 </ul>
+                </ScrollArea>
               </div>
             </TabsContent>
 
