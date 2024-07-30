@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -23,6 +23,7 @@ const projects = [
     desc: "Responsive landing page",
     stack: [{ name: "Html 5" }, { name: "SASS" }, { name: "Javascript" }, { name: "BEM" }],
     image: "/assets/work/thumb1.png",
+    miniImage: "/assets/work/thumb1-mini.png",
     demo: "https://grigoryykach.github.io/nothing-landing/",
     github: "https://github.com/GrigoryyKach/nothing-landing?tab=readme-ov-file",
   },
@@ -32,6 +33,7 @@ const projects = [
     desc: "Responsive landing page",
     stack: [{ name: "Html 5" }, { name: "SASS" }, { name: "Javascript" }, { name: "BEM" }],
     image: "/assets/work/thumb2.png",
+    miniImage: "/assets/work/thumb2-mini.png",
     demo: "https://grigoryykach.github.io/hlegal-landing/",
     github: "https://github.com/GrigoryyKach/hlegal-landing",
   },
@@ -41,6 +43,7 @@ const projects = [
     desc: "An easy-to-use, intuitive application for managing everyday tasks",
     stack: [{ name: "React.js" }, { name: "Typescript" }, { name: "Javascript" }, { name: "Rest API" }],
     image: "/assets/work/thumb3.png",
+    miniImage: "/assets/work/thumb3-mini.png",
     demo: "https://grigoryykach.github.io/todo-app/",
     github: "https://github.com/GrigoryyKach/todo-app",
   },
@@ -50,6 +53,7 @@ const projects = [
     desc: "A project designed to function as an e-commerce platform for mobile phones and other gadgets",
     stack: [{ name: "React.js" }, { name: "Typescript" }, { name: "Javascript" }, { name: "SCSS" }, { name: "etc." }],
     image: "/assets/work/thumb4.png",
+    miniImage: "/assets/work/thumb4-mini.png",
     demo: "https://fs-mar24-codecrafters.github.io/react_phone-catalog/#/",
     github: "https://github.com/FS-MAR24-CodeCrafters/react_phone-catalog",
   },
@@ -57,6 +61,17 @@ const projects = [
 
 const Work = () => {
   const [project, setProject] = useState(projects[0]);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 640);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleSlideChange = (swiper) => {
     // get current slide
@@ -166,7 +181,7 @@ const Work = () => {
                       {/* image */}
                       <div className="relative w-full h-full">
                         <Image
-                          src={project.image}
+                          src={isSmallScreen ? project.miniImage : project.image}
                           fill
                           className="object-cover"
                           alt=""
