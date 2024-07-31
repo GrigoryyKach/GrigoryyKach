@@ -14,7 +14,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Hryhorii",
+  title: "Hryhorii Kachurovskyi | Front-end developer",
   description: "My porfolio site",
 };
 

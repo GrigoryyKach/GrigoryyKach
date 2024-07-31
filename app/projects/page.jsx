@@ -62,6 +62,7 @@ const projects = [
 const Projects = () => {
   const [project, setProject] = useState(projects[0]);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [swiperInstance, setSwiperInstance] = useState(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -166,6 +167,7 @@ const Projects = () => {
               slidesPerView={1}
               className="xl:h-[520px] mb-12"
               onSlideChange={handleSlideChange}
+              onSwiper={setSwiperInstance}
             >
               {projects.map((project, idx) => {
                 return (
@@ -193,10 +195,13 @@ const Projects = () => {
               })}
 
               {/* slider buttons */}
-              <WorkSliderBtns
-                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
-              />
+              {swiperInstance && (
+                <WorkSliderBtns
+                  containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
+                  btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
+                  swiper={swiperInstance}
+                />
+              )}
             </Swiper>
           </div>
         </div>
