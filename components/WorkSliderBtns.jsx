@@ -25,14 +25,14 @@ const WorkSliderBtns = ({ containerStyles, btnStyles, swiper }) => {
   return (
     <div className={containerStyles}>
       <button
-        className={`${btnStyles} ${isBeginning ? 'bg-[#3276ad] cursor-auto' : ''}`}
+        className={btnStyles}
         onClick={() => !isBeginning && swiper.slidePrev()}
         disabled={isBeginning}
       >
         <PiCaretLeftBold />
       </button>
       <button
-        className={`${btnStyles} ${isEnd ? 'bg-[#3276ad] cursor-auto' : ''}`}
+        className={btnStyles}
         onClick={() => !isEnd && swiper.slideNext()}
         disabled={isEnd}
       >
