@@ -1,8 +1,15 @@
 "use client";
 
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { ToastAction } from "@/components/ui/toast";
+import { useToast } from "@/components/ui/use-toast";
+import { Loader2 } from "lucide-react";
+
 import { motion } from "framer-motion";
 
 import {
@@ -36,6 +43,77 @@ const info = [
 ]
 
 const Contact = () => {
+  const formRef = useRef();
+  const [form, setForm] = useState({
+    firstname: '',
+    lastname: '',
+    email: '',
+    phone: '',
+    service: '',
+    message: '',
+  });
+  const [serviceLabel, setServiceLabel] = useState("Select a service");
+  const toast = useToast().toast;
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setForm({ ...form, [name]: value });
+  };
+
+  const handleSelectChange = (value, label) => {
+    setForm({ ...form, service: value });
+    setServiceLabel(label);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    emailjs.send(
+      'service_297fw79',
+      'template_wqqjxfn',
+      {
+        from_name: `${form.firstname} ${form.lastname}`,
+        to_name: 'Hryhorii',
+        from_email: form.email,
+        to_email: 'hryhorii.k.dev@gmail.com',
+        phone: form.phone,
+        service: form.service,
+        message: form.message,
+      },
+      'eIEV7Y8QgnhBxkwvt'
+    )
+      .then(() => {
+        setIsLoading(false);
+        alert("Thank you! I will get back to you as soon as possible.");
+        toast({
+          title: 'Thank you!',
+          description: 'I will get back to you as soon as possible.',
+        });
+
+        setForm({
+          firstname: '',
+          lastname: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: '',
+        });
+        setServiceLabel("Select a service");
+      }, (error) => {
+        setIsLoading(false);
+        toast({
+          variant: "destructive",
+          title: 'Oops...',
+          description: 'Something went wrong. Try again later!',
+          action: <ToastAction altText="Try again">Try again</ToastAction>,
+        });
+        console.log(error);
+      });
+  };
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -50,6 +128,8 @@ const Contact = () => {
           {/* form */}
           <div className="xl:w-[54%] order-2 xl:order-none">
             <form
+              ref={formRef}
+              onSubmit={handleSubmit}
               className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
             >
               <h3 className="text-4xl text-accent">Let's work together</h3>
@@ -59,24 +139,51 @@ const Contact = () => {
 
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="firstname" placeholder="Firstname" />
-                <Input type="lastname" placeholder="Lastname" />
-                <Input type="email" placeholder="Email address" />
-                <Input type="phone" placeholder="Phone number" />
+                <Input
+                  type="text"
+                  name="firstname"
+                  placeholder="Firstname"
+                  value={form.firstname}
+                  onChange={handleChange}
+                />
+                <Input
+                  type="text"
+                  name="lastname"
+                  placeholder="Lastname"
+                  value={form.lastname}
+                  onChange={handleChange}
+                />
+                <Input
+                  type="text"
+                  name="email"
+                  placeholder="Email address"
+                  value={form.email}
+                  onChange={handleChange}
+                />
+                <Input
+                  type="text"
+                  name="phone"
+                  placeholder="Phone number"
+                  value={form.phone}
+                  onChange={handleChange}
+                />
               </div>
 
               {/* select */}
-              <Select>
+              <Select
+                value={form.service}
+                onValueChange={(value, label) => handleSelectChange(value, label)}
+              >
                 <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select a service" />
+                  <SelectValue placeholder={serviceLabel} />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>Select a service</SelectLabel>
-                    <SelectItem value="est">HTML/CSS/JS Layout</SelectItem>
-                    <SelectItem value="cst">React.js/Next.js Development</SelectItem>
-                    <SelectItem value="mst">Vue.js/Nuxt.js Development</SelectItem>
-                    <SelectItem value="wbd">React Native Development</SelectItem>
+                    <SelectItem value="html">HTML/CSS/JS Layout</SelectItem>
+                    <SelectItem value="react/next">React.js/Next.js Development</SelectItem>
+                    <SelectItem value="vue/nuxt">Vue.js/Nuxt.js Development</SelectItem>
+                    <SelectItem value="react native">React Native Development</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
@@ -85,14 +192,22 @@ const Contact = () => {
               <Textarea
                 className="h-[200px]"
                 placeholder="Type Your message here."
+                type="text"
+                name="message"
+                value={form.message}
+                onChange={handleChange}
               />
 
               {/* btn */}
               <Button
+                disabled={isLoading}
                 size="md"
-                className="max-w-40"
+                className="max-w-40 cursor-pointer"
               >
-                Send message
+                {isLoading
+                  ? <Loader2 className="h-4 w-4 animate-spin" />
+                  : "Send message"
+                }
               </Button>
             </form>
           </div>

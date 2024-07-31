@@ -2,6 +2,7 @@ import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 // components imports
+import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairEffect from "@/components/StairEffect";
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
         <PageTransition>
           {children}
         </PageTransition>
+        <Toaster />
       </body>
     </html>
   );

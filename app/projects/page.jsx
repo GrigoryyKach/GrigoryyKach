@@ -59,7 +59,7 @@ const projects = [
   },
 ];
 
-const Work = () => {
+const Projects = () => {
   const [project, setProject] = useState(projects[0]);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
@@ -205,4 +205,4 @@ const Work = () => {
   )
 }
 
-export default Work;
+export default Projects;
