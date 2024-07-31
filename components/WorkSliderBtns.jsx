@@ -22,9 +22,6 @@ const WorkSliderBtns = ({ containerStyles, btnStyles, swiper }) => {
     };
   }, [swiper]);
 
-  // const swiper = useSwiper();
-  // swiper.onRonReachEnd();
-
   return (
     <div className={containerStyles}>
       <button

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTelegram, FaEnvelope } from "react-icons/fa";
 
 const socials = [
   {
@@ -10,6 +10,14 @@ const socials = [
   {
     icon: <FaLinkedin />,
     path: 'https://www.linkedin.com/in/hryhorii-kachurovskyi/',
+  },
+  {
+    icon: <FaTelegram />,
+    path: 'https://t.me/hrigoriikachurovskyi',
+  },
+  {
+    icon: <FaEnvelope />,
+    path: 'mailto:hryhorii.k.dev@gmail.com',
   },
 ]
 
