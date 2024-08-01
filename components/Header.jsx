@@ -1,11 +1,28 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "./ui/button";
 
 // components imports
 import Nav from "./Nav";
 import MobileNav from "./MobileNav";
+import { useToast } from "@/components/ui/use-toast";
 
 const Header = () => {
+  const { toast } = useToast();
+  const pathName = usePathname();
+
+  const handleClick = (e) => {
+    if (pathName === "/contact") {
+      e.preventDefault();
+      toast({
+        title: "You're already on the contact page!",
+        description: "Feel free to fill out the form.",
+      });
+    }
+  };
+
   return (
     <header className="py-8 xl:py-12 text-white">
       <div className="container mx-auto flex justify-between items-center">
@@ -20,7 +37,7 @@ const Header = () => {
         <div className="hidden xl:flex items-center gap-8">
           <Nav />
           <Link href="/contact">
-            <Button>Hire me</Button>
+            <Button onClick={handleClick}>Hire me</Button>
           </Link>
         </div>
 
