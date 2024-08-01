@@ -64,7 +64,7 @@ MongoDB.
   <li>Module SCSS</li>
   <li>BEM</li>
 </ul>
-<a href="https://github.com/FS-MAR24-CodeCrafters/react_phone-catalog">Code</a> | <a href="https://fs-mar24-codecrafters.github.io/react_phone-catalog/#/">Demo</a>
+<a href="https://fs-mar24-codecrafters.github.io/react_phone-catalog/#/">Demo</a> | <a href="https://github.com/FS-MAR24-CodeCrafters/react_phone-catalog">Code</a>
 
 <h3>Task List Organizer App</h3>
 <p>An easy-to-use, intuitive application for managing everyday tasks</p>
