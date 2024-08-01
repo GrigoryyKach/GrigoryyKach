@@ -9,25 +9,25 @@ const services = [
     num: '01',
     title: 'HTML/CSS/JavaScript Layout',
     desc: 'I create adaptive web pages using HTML5, CSS3 and JavaScript. I also use the BEM methodology, and the SASS preprocessor.',
-    href: "/work",
+    href: "/projects",
   },
   {
     num: '02',
     title: 'React.js/Next.js Development',
     desc: 'Using React.js or Next.js and TypeScript, as well as various libraries like Tailwind.css I create adaptive web applications.',
-    href: "/work",
+    href: "/projects",
   },
   {
     num: '03',
     title: 'Vue.js/Nuxt.js Development',
     desc: 'Using Vue.js or Nuxt.js, as well as various libraries like Tailwind.css I create adaptive web applications.',
-    href: "/work",
+    href: "/projects",
   },
   {
     num: '04',
     title: 'React Native Development',
     desc: 'Developing cross-platform applications with React Native, focusing on performance, and seamless functionality.',
-    href: "/work",
+    href: "/projects",
   },
 ]
 
