@@ -97,6 +97,6 @@ MongoDB.
 <div>
   <a href="https://t.me/hrigoriikachurovskyi"><img height="24px" src="https://img.shields.io/badge/-Telegram-000000?style=flat&logo=telegram" /></a>
   <a href="https://www.linkedin.com/in/hryhorii-kachurovskyi/"><img height="24px" src="https://img.shields.io/badge/-LinkedIn-000000?style=flat&logo=linkedin" /></a>
-  <a href="mailto:perekhodko.maksym@gmail.com"><img height="24px" src="https://img.shields.io/badge/-Email-000000?style=flat&logo=gmail" /></a>
+  <a href="mailto:hryhorii.k.dev@gmail.com"><img height="24px" src="https://img.shields.io/badge/-Email-000000?style=flat&logo=gmail" /></a>
   <a href="https://hrigoryy-site.vercel.app/"><img height="24px" src="https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white" /></a>
 </div>
