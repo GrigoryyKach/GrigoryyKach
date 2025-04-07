@@ -1,11 +1,12 @@
+import { Analytics } from "@vercel/analytics/react";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 // components imports
-import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairEffect from "@/components/StairEffect";
+import { Toaster } from "@/components/ui/toaster";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
           {children}
         </PageTransition>
         <Toaster />
+        <Analytics />
       </body>
     </html>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { FaHtml5, FaCss3, FaJs, FaReact, FaVuejs, FaFigma } from "react-icons/fa";
+import { FaHtml5, FaCss3, FaJs, FaReact, FaVuejs, FaFigma, FaDocker } from "react-icons/fa";
 import {
   SiTailwindcss,
   SiNextdotjs,
@@ -12,6 +12,10 @@ import {
   SiGit,
   SiVisualstudiocode,
   SiWebpack,
+  SiMongodb,
+  SiPostgresql,
+  SiShadcnui,
+  SiMui,
 } from "react-icons/si";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -22,7 +26,7 @@ import { motion } from "framer-motion";
 // about data
 const about = {
   title: "About me",
-  desc: "My name Hryhorii, I'm Front-end developer with 2 years of experience in the IT field. I implement modern front-end technologies such as React to create interactive user interfaces.",
+  desc: "My name Hryhorii, I'm Full-stack developer with 2 years of experience in the IT field. I implement modern front-end technologies such as React to create interactive user interfaces.",
   info: [
     {
       fieldName: "Name",
@@ -80,18 +84,18 @@ const skills = {
       icon: <SiTypescript />,
       name: "typescript",
     },
-    {
-      icon: <FaVuejs />,
-      name: "vue.js",
-    },
+    // {
+    //   icon: <FaVuejs />,
+    //   name: "vue.js",
+    // },
     {
       icon: <SiNextdotjs />,
       name: "next.js",
     },
-    {
-      icon: <SiNuxtdotjs />,
-      name: "nuxt.js",
-    },
+    // {
+    //   icon: <SiNuxtdotjs />,
+    //   name: "nuxt.js",
+    // },
     {
       icon: <SiTailwindcss />,
       name: "tailwind.css",
@@ -113,6 +117,18 @@ const skills = {
       name: "Webpack",
     },
     {
+      icon: <FaDocker />,
+      name: "Docker",
+    },
+    {
+      icon: <SiMongodb />,
+      name: "MongoDB",
+    },
+    {
+      icon: <SiPostgresql />,
+      name: "PostgreSQL",
+    },
+    {
       icon: <SiGit />,
       name: "GIT",
     },
@@ -121,8 +137,16 @@ const skills = {
       name: "VS code",
     },
     {
+      icon: <SiShadcnui />,
+      name: "Shadcn/ui",
+    },
+    {
+      icon: <SiMui />,
+      name: "Material/ui",
+    },
+    {
       icon: <FaFigma />,
-      name: "figma",
+      name: "Figma",
     },
   ]
 };

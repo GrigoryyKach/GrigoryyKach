@@ -181,8 +181,8 @@ const Contact = () => {
                     <SelectLabel>Select a service</SelectLabel>
                     <SelectItem value="html">HTML/CSS/JS Layout</SelectItem>
                     <SelectItem value="react/next">React.js/Next.js Development</SelectItem>
-                    <SelectItem value="vue/nuxt">Vue.js/Nuxt.js Development</SelectItem>
-                    <SelectItem value="react native">React Native Development</SelectItem>
+                    {/* <SelectItem value="vue/nuxt">Vue.js/Nuxt.js Development</SelectItem> */}
+                    {/* <SelectItem value="react native">React Native Development</SelectItem> */}
                   </SelectGroup>
                 </SelectContent>
               </Select>

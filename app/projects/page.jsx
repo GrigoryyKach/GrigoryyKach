@@ -19,6 +19,16 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "01",
+    title: "GameAtlas",
+    desc: "Website wiki about videogames",
+    stack: [{ name: "Next.js" }, { name: "Tailwind" }, { name: "GraphQL" }],
+    image: "/assets/work/thumb5.png",
+    miniImage: "/assets/work/thumb5-mini.png",
+    demo: "https://gameatlas.vercel.app/",
+    github: "https://github.com/GrigoryyKach/gameatlas",
+  },
+  {
+    num: "02",
     title: "Nothing Phone Landing page",
     desc: "Responsive landing page",
     stack: [{ name: "Html 5" }, { name: "SASS" }, { name: "Javascript" }, { name: "BEM" }],
@@ -28,7 +38,7 @@ const projects = [
     github: "https://github.com/GrigoryyKach/nothing-landing?tab=readme-ov-file",
   },
   {
-    num: "02",
+    num: "03",
     title: "hLegal Landing page",
     desc: "Responsive landing page",
     stack: [{ name: "Html 5" }, { name: "SASS" }, { name: "Javascript" }, { name: "BEM" }],
@@ -38,7 +48,7 @@ const projects = [
     github: "https://github.com/GrigoryyKach/hlegal-landing",
   },
   {
-    num: "03",
+    num: "04",
     title: "Todo App",
     desc: "An easy-to-use, intuitive application for managing everyday tasks",
     stack: [{ name: "React.js" }, { name: "Typescript" }, { name: "Javascript" }, { name: "Rest API" }],
@@ -48,7 +58,7 @@ const projects = [
     github: "https://github.com/GrigoryyKach/todo-app",
   },
   {
-    num: "04",
+    num: "05",
     title: "Gadgets Online Store",
     desc: "A project designed to function as an e-commerce platform for mobile phones and other gadgets",
     stack: [{ name: "React.js" }, { name: "Typescript" }, { name: "Javascript" }, { name: "SCSS" }, { name: "etc." }],
@@ -131,7 +141,7 @@ const Projects = () => {
 
               {/* buttons */}
               <div className="flex items-center gap-4">
-                {/* demo project */}
+                {/* project link */}
                 <Link href={project.demo}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
@@ -139,7 +149,7 @@ const Projects = () => {
                         <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
                       </TooltipTrigger>
                       <TooltipContent>
-                        <p>Demo project</p>
+                        <p>Project Link</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
