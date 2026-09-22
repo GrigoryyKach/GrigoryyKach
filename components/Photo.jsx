@@ -20,10 +20,10 @@ const Photo = () => {
             opacity: 1,
             transition: { delay: 2.4, duration: 0.4, ease: "easeInOut" },
           }}
-          className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute"
+          className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px]  absolute"
         >
           <Image
-            src="/assets/photo.png"
+            src="/assets/photo3.png"
             priority
             quality={100}
             fill
@@ -40,8 +40,8 @@ const Photo = () => {
           xmlns="http://www.w3.org/2000/svg"
         >
           <motion.circle
-            cx="253"
-            cy="253"
+            cx="252"
+            cy="254"
             r="250"
             stroke="#3d8ac9"
             strokeWidth="4"

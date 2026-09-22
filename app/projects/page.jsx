@@ -19,6 +19,16 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "01",
+    title: "Chronex",
+    desc: "Local-firts videogame tracker with statistics",
+    stack: [{ name: "Next.js" }, { name: "Chakra UI" }, { name: "Dexie" }],
+    image: "/assets/work/chronex-thumb.png",
+    miniImage: "/assets/work/chronex-thumb-mini.png",
+    demo: "https://mychronex.vercel.app/",
+    // github: "https://github.com/GrigoryyKach/gameatlas",
+  },
+  {
+    num: "02",
     title: "GameAtlas",
     desc: "Website wiki about videogames",
     stack: [{ name: "Next.js" }, { name: "Tailwind" }, { name: "GraphQL" }],
@@ -28,7 +38,7 @@ const projects = [
     github: "https://github.com/GrigoryyKach/gameatlas",
   },
   {
-    num: "02",
+    num: "03",
     title: "Nothing Phone Landing page",
     desc: "Responsive landing page",
     stack: [{ name: "Html 5" }, { name: "SASS" }, { name: "Javascript" }, { name: "BEM" }],
@@ -38,7 +48,7 @@ const projects = [
     github: "https://github.com/GrigoryyKach/nothing-landing?tab=readme-ov-file",
   },
   {
-    num: "03",
+    num: "04",
     title: "hLegal Landing page",
     desc: "Responsive landing page",
     stack: [{ name: "Html 5" }, { name: "SASS" }, { name: "Javascript" }, { name: "BEM" }],
@@ -48,7 +58,7 @@ const projects = [
     github: "https://github.com/GrigoryyKach/hlegal-landing",
   },
   {
-    num: "04",
+    num: "05",
     title: "Todo App",
     desc: "An easy-to-use, intuitive application for managing everyday tasks",
     stack: [{ name: "React.js" }, { name: "Typescript" }, { name: "Javascript" }, { name: "Rest API" }],
@@ -58,7 +68,7 @@ const projects = [
     github: "https://github.com/GrigoryyKach/todo-app",
   },
   {
-    num: "05",
+    num: "06",
     title: "Gadgets Online Store",
     desc: "A project designed to function as an e-commerce platform for mobile phones and other gadgets",
     stack: [{ name: "React.js" }, { name: "Typescript" }, { name: "Javascript" }, { name: "SCSS" }, { name: "etc." }],
@@ -156,18 +166,20 @@ const Projects = () => {
                 </Link>
 
                 {/* github project */}
-                <Link href={project.github}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsGithub className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>GitHub repository</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+                {project.github && (
+                  <Link href={project.github}>
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                          <BsGithub className="text-white text-3xl group-hover:text-accent" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>GitHub repository</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                )}
               </div>
             </div>
           </div>
